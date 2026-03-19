@@ -30,7 +30,7 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.06)]">
           <p className="text-xs text-text-muted">
-            © 2026 Do Ngoc Minh — Project Nova
+            © 2026 Nextgen Ops Virtual Agents
           </p>
           <p className="text-xs text-text-muted mt-1">
             <a href="https://trolythongminh.io.vn" className="hover:text-nova-gold transition-colors">
