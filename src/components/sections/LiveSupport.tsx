@@ -1,53 +1,99 @@
-import { SectionWrapper } from '@/components/ui/SectionWrapper';
-import { GlassCard } from '@/components/ui/GlassCard';
-import { ScrollReveal } from '@/components/animations/ScrollReveal';
+import ScrollReveal from '@/components/animations/ScrollReveal'
 
-export function LiveSupport() {
+export default function LiveSupport() {
   return (
-    <SectionWrapper id="live-support" darkAlt>
-      <ScrollReveal>
-        <div className="text-center max-w-lg mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-[family-name:var(--font-heading)] text-text-primary mb-4">
-            Hỗ Trợ 24/7
+    <section style={{
+      padding: 'var(--section-py) 1.5rem',
+      borderTop: '1px solid var(--color-border)',
+      background: 'var(--color-bg)',
+    }}>
+      <div className="container" style={{ textAlign: 'center' }}>
+        <ScrollReveal>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
+            padding: '0.5rem 1rem',
+            background: 'rgba(46, 204, 133, 0.08)',
+            border: '1px solid rgba(46, 204, 133, 0.2)',
+            borderRadius: 100,
+            fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em',
+            textTransform: 'uppercase', color: 'var(--color-p5)',
+            marginBottom: '1.5rem',
+          }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-p5)', display: 'inline-block' }} />
+            Hỗ trợ 24/7
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.08}>
+          <h2 className="text-heading" style={{ marginBottom: '1rem' }}>
+            Tinh Tú luôn ở đây
           </h2>
-          <p className="text-text-secondary mb-8">
-            Tinh Tú Luôn Ở Đây
+          <p style={{ color: 'var(--color-text-2)', fontSize: '1rem', lineHeight: 1.7, maxWidth: 480, margin: '0 auto 2.5rem' }}>
+            Tinh Tú là AI Agent thật — không phải chatbot FAQ. Hỏi gì cũng được: gói dịch vụ, quy trình kích hoạt, hoặc bất kỳ điều gì bạn chưa rõ.
           </p>
+        </ScrollReveal>
 
-          <GlassCard warm className="text-left">
-            <div className="flex items-center gap-3 mb-4 pb-3 border-b border-[rgba(255,255,255,0.06)]">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-nova-gold to-nova-orange flex items-center justify-center text-lg">
-                ⭐
+        <ScrollReveal delay={0.16}>
+          <div style={{
+            maxWidth: 360, margin: '0 auto',
+            background: 'var(--color-bg-raised)',
+            border: '1px solid var(--color-border-med)',
+            borderRadius: 16,
+            overflow: 'hidden',
+          }}>
+            {/* Chat widget header */}
+            <div style={{
+              padding: '1rem 1.25rem',
+              borderBottom: '1px solid var(--color-border)',
+              display: 'flex', alignItems: 'center', gap: '0.75rem',
+              background: 'var(--color-bg-subtle)',
+            }}>
+              <div style={{
+                width: 36, height: 36, borderRadius: '50%',
+                background: 'var(--color-amber)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-bg)',
+              }}>
+                TT
               </div>
-              <div>
-                <p className="text-sm font-bold font-[family-name:var(--font-heading)] text-text-primary">Tinh Tú</p>
-                <p className="text-xs text-[#34d399]">Online</p>
-              </div>
-            </div>
-
-            <div className="space-y-3 mb-4">
-              <div className="flex justify-start">
-                <div className="max-w-[80%] px-4 py-2.5 rounded-2xl rounded-bl-md bg-[rgba(245,158,11,0.08)] border border-[rgba(245,158,11,0.12)] text-sm text-text-secondary">
-                  Chào bạn! Tôi là Tinh Tú — AI Agent thật, không phải chatbot FAQ. Hỏi gì cũng được. 🌟
+              <div style={{ textAlign: 'left' }}>
+                <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-text)' }}>Tinh Tú</div>
+                <div style={{ fontSize: '0.6875rem', color: 'var(--color-p5)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                  <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--color-p5)', display: 'inline-block' }} />
+                  Đang hoạt động
                 </div>
               </div>
             </div>
 
-            <a
-              href="https://t.me/Nova_superagent_bot"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center px-6 py-3 rounded-xl bg-gradient-to-r from-nova-gold to-amber-DEFAULT text-space-950 font-bold text-sm font-[family-name:var(--font-heading)] hover:-translate-y-0.5 transition-all shadow-[0_4px_20px_rgba(245,158,11,0.2)]"
-            >
-              Nhắn Tinh Tú Ngay
-            </a>
-          </GlassCard>
+            {/* Placeholder message */}
+            <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{
+                padding: '0.625rem 0.875rem',
+                background: 'var(--color-amber-dim)',
+                border: '1px solid var(--color-amber-line)',
+                borderRadius: '12px 12px 12px 3px',
+                fontSize: '0.875rem', color: 'var(--color-text-2)',
+                lineHeight: 1.6, textAlign: 'left',
+              }}>
+                Xin chào! Tôi là Tinh Tú. Bạn đang tìm hiểu về AI Agent nào? Để tôi tư vấn phù hợp với doanh nghiệp của bạn.
+              </div>
 
-          <p className="text-xs text-text-muted mt-4">
-            Tinh Tú là AI Agent thật — không phải chatbot FAQ. Hỏi gì cũng được.
-          </p>
-        </div>
-      </ScrollReveal>
-    </SectionWrapper>
-  );
+              <a
+                href="https://t.me/Nova_superagent_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ width: '100%', justifyContent: 'center', marginTop: '0.25rem' }}
+              >
+                Nhắn Tinh Tú ngay
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  )
 }

@@ -1,94 +1,104 @@
-'use client';
+'use client'
+import { useEffect, useState } from 'react'
+import { Sparkles, Zap } from 'lucide-react'
 
-import { useActivePhase } from '@/hooks/useActivePhase';
+const PHASE_IDS = ['core-values', 'phase-1', 'phase-2', 'phase-3', 'phase-4', 'phase-5', 'phase-6']
 
-const phases = [
-  { label: 'Kích Hoạt', color: '#fbbf24' },
-  { label: 'Huấn Luyện', color: '#fb923c' },
-  { label: 'Tối Ưu', color: '#a78bfa' },
-  { label: 'Nhận Diện', color: '#f87171' },
-  { label: 'Đối Tác', color: '#34d399' },
-  { label: 'Hành Trình', color: '#60a5fa' },
-];
+export default function Navbar() {
+  const [active, setActive] = useState(0)
+  const [scrolled, setScrolled] = useState(false)
 
-export function Navbar() {
-  const activePhase = useActivePhase();
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = PHASE_IDS.indexOf(entry.target.id)
+            if (idx !== -1) setActive(idx)
+          }
+        })
+      },
+      { rootMargin: '-40% 0px -40% 0px' }
+    )
+    const timeout = setTimeout(() => {
+      PHASE_IDS.forEach((id) => {
+        const el = document.getElementById(id)
+        if (el) observer.observe(el)
+      })
+    }, 100)
+    return () => { clearTimeout(timeout); observer.disconnect() }
+  }, [])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(11,15,26,0.92)] backdrop-blur-[14px] border-b border-[rgba(255,255,255,0.06)]">
-      <div className="mx-auto max-w-[1120px] px-5 h-14 flex items-center justify-between">
+    <header style={{
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
+      borderBottom: scrolled ? '1px solid var(--color-border)' : '1px solid transparent',
+      background: scrolled ? 'rgba(12,13,15,0.96)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(12px)' : 'none',
+      transition: 'background 0.2s ease, border-color 0.2s ease',
+    }}>
+      <div style={{
+        maxWidth: 'var(--max-w-wide)', marginInline: 'auto',
+        padding: '0 1.5rem',
+        height: 56,
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      }}>
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2">
-          <span className="text-lg">✦</span>
-          <span className="font-bold text-sm font-[family-name:var(--font-heading)] tracking-tight text-text-primary">
-            Cẩm Nang <span className="text-nova-gold">AI Agent</span>
-          </span>
+        <a href="https://trolythongminh.io.vn" style={{
+          fontWeight: 700, fontSize: '0.9375rem', color: 'var(--color-text)',
+          textDecoration: 'none', letterSpacing: '-0.01em',
+          display: 'flex', alignItems: 'center', gap: '0.5rem',
+        }}>
+          <Sparkles size={18} color="var(--color-amber)" />
+          Trợ Lý Thông Minh
         </a>
 
-        {/* Phase dots — desktop */}
-        <div className="hidden md:flex items-center gap-1.5">
-          {phases.map((phase, i) => {
-            const isActive = activePhase === i + 1;
-            const isCompleted = activePhase > i + 1;
-            return (
-              <a
-                key={i}
-                href={`#phase-${['activation', 'training', 'optimize', 'detection', 'partnership', 'journey'][i]}`}
-                className="group flex items-center gap-1.5 px-2 py-1 rounded-full transition-all duration-200"
-                title={phase.label}
-              >
-                <div
-                  className="w-2 h-2 rounded-full transition-all duration-300"
-                  style={{
-                    backgroundColor: isActive
-                      ? phase.color
-                      : isCompleted
-                      ? `${phase.color}80`
-                      : 'rgba(255,255,255,0.15)',
-                    boxShadow: isActive ? `0 0 8px ${phase.color}60` : 'none',
-                  }}
-                />
-                <span
-                  className={`text-[10px] font-semibold font-[family-name:var(--font-heading)] uppercase tracking-wider transition-all duration-200 ${
-                    isActive ? 'opacity-100' : 'opacity-0 w-0 overflow-hidden group-hover:opacity-60 group-hover:w-auto'
-                  }`}
-                  style={{ color: isActive ? phase.color : 'rgba(255,255,255,0.5)' }}
-                >
-                  {phase.label}
-                </span>
-              </a>
-            );
-          })}
-        </div>
+        {/* Phase dots — desktop — 44px touch targets */}
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }} aria-label="Giai đoạn">
+          {PHASE_IDS.slice(1).map((id, i) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              aria-label={`Giai đoạn ${i + 1}`}
+              style={{
+                width: 44, height: 44,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                borderRadius: '50%',
+              }}
+            >
+              <span style={{
+                width: 8, height: 8, borderRadius: '50%',
+                display: 'block',
+                background: active === i + 1 ? 'var(--color-amber)' : 'var(--color-border-med)',
+                boxShadow: active === i + 1 ? '0 0 10px var(--color-amber)' : 'none',
+                transition: 'background 0.2s ease, box-shadow 0.2s ease',
+              }} />
+            </a>
+          ))}
+        </nav>
 
         {/* CTA */}
-        <a
-          href="#phase-activation"
-          className="hidden sm:inline-flex items-center px-4 py-2 rounded-xl bg-gradient-to-r from-nova-gold to-amber-DEFAULT text-space-950 text-xs font-bold font-[family-name:var(--font-heading)] shadow-[0_2px_12px_rgba(245,158,11,0.2)] hover:-translate-y-0.5 transition-all"
-        >
-          Bắt Đầu
+        <a href="https://t.me/Nova_superagent_bot" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '0.5rem 1.125rem', fontSize: '0.8125rem' }}>
+          <Zap size={14} />
+          Bắt đầu
         </a>
       </div>
 
-      {/* Phase bar — mobile */}
-      {activePhase > 0 && (
-        <div className="md:hidden px-5 pb-2 flex gap-1">
-          {phases.map((phase, i) => (
-            <div
-              key={i}
-              className="h-0.5 flex-1 rounded-full transition-all duration-500"
-              style={{
-                backgroundColor:
-                  activePhase > i
-                    ? phase.color
-                    : activePhase === i + 1
-                    ? `${phase.color}60`
-                    : 'rgba(255,255,255,0.06)',
-              }}
-            />
-          ))}
-        </div>
-      )}
-    </nav>
-  );
+      {/* Mobile progress bar */}
+      <div style={{ height: 2, background: 'var(--color-border)', position: 'relative' }}>
+        <div style={{
+          position: 'absolute', left: 0, top: 0, height: '100%',
+          background: 'var(--color-amber)',
+          width: `${(active / (PHASE_IDS.length - 1)) * 100}%`,
+          transition: 'width 0.3s ease',
+        }} />
+      </div>
+    </header>
+  )
 }

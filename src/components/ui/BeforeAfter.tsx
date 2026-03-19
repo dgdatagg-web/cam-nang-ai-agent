@@ -1,29 +1,27 @@
 interface BeforeAfterProps {
-  before: { label: string; content: string; emoji: string };
-  after: { label: string; content: string; emoji: string };
+  before: { label: string; text: string }
+  after:  { label: string; text: string }
 }
 
-export function BeforeAfter({ before, after }: BeforeAfterProps) {
+export default function BeforeAfter({ before, after }: BeforeAfterProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-      <div className="glass-card p-5 border-l-[3px] border-[rgba(239,68,68,0.4)]">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-lg">{before.emoji}</span>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#f87171] font-[family-name:var(--font-heading)]">
-            {before.label}
-          </span>
+    <div className="ba-grid">
+      <div className="ba-cell ba-cell-bad">
+        <div style={{ fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-p4)', marginBottom: '0.625rem' }}>
+          {before.label}
         </div>
-        <p className="text-sm text-text-muted leading-relaxed">{before.content}</p>
+        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-2)', margin: 0, lineHeight: 1.6 }}>
+          {before.text}
+        </p>
       </div>
-      <div className="glass-card-warm p-5 border-l-[3px] border-[rgba(52,211,153,0.5)]">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-lg">{after.emoji}</span>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#34d399] font-[family-name:var(--font-heading)]">
-            {after.label}
-          </span>
+      <div className="ba-cell ba-cell-good">
+        <div style={{ fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-p5)', marginBottom: '0.625rem' }}>
+          {after.label}
         </div>
-        <p className="text-sm text-text-secondary leading-relaxed">{after.content}</p>
+        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-2)', margin: 0, lineHeight: 1.6 }}>
+          {after.text}
+        </p>
       </div>
     </div>
-  );
+  )
 }
