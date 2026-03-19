@@ -22,22 +22,22 @@ export default function Footer() {
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <ScrollReveal variant="scale">
             <h2 className="text-heading" style={{ marginBottom: '1rem' }}>
-              Sẵn sàng gặp đồng đội của bạn?
+              Ready to meet your teammate?
             </h2>
             <p style={{ color: 'var(--color-text-2)', fontSize: '1rem', lineHeight: 1.7, maxWidth: 420, margin: '0 auto 2.5rem' }}>
-              Không cần thẻ. Không cần code. Chỉ cần bắt đầu nói chuyện.
+              No credit card. No coding. Just start talking.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1} variant="up">
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a href="https://t.me/Nova_superagent_bot" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a href="https://www.myclaw.vn/en/pricing" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 <Zap size={16} />
-                Kích hoạt Agent — Bắt đầu 7 ngày demo
+                Activate Agent — Start 7-Day Free Demo
               </a>
-              <a href="https://trolythongminh.io.vn" className="btn-ghost">
+              <a href="https://t.me/Nova_superagent_bot" target="_blank" rel="noopener noreferrer" className="btn-ghost">
                 <ExternalLink size={14} />
-                Tìm hiểu thêm
+                Message NOVA 01
               </a>
             </div>
           </ScrollReveal>
@@ -62,18 +62,18 @@ export default function Footer() {
             <path d="M9 2l1.8 3.6L15 7l-3 3 .6 4.2L9 12l-3.6 2.2L6 9.6 3 7l4.2-1.4L9 2Z" fill="var(--color-amber)"/>
           </svg>
           <span style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-text)' }}>
-            Trợ Lý Thông Minh
+            Noobs Learn AI
           </span>
         </div>
         <div style={{ display: 'flex', gap: '1.5rem' }}>
-          <a href="https://trolythongminh.io.vn" style={{ fontSize: '0.8125rem', color: 'var(--color-text-3)', textDecoration: 'none', minHeight: 44, display: 'flex', alignItems: 'center' }}>
-            Trang chủ
+          <a href="https://noobslearnai.today" style={{ fontSize: '0.8125rem', color: 'var(--color-text-3)', textDecoration: 'none', minHeight: 44, display: 'flex', alignItems: 'center' }}>
+            Home
           </a>
-          <a href="https://trolythongminh.io.vn/blog" style={{ fontSize: '0.8125rem', color: 'var(--color-text-3)', textDecoration: 'none', minHeight: 44, display: 'flex', alignItems: 'center' }}>
+          <a href="https://noobslearnai.today/blog" style={{ fontSize: '0.8125rem', color: 'var(--color-text-3)', textDecoration: 'none', minHeight: 44, display: 'flex', alignItems: 'center' }}>
             Blog
           </a>
           <a href="https://t.me/Nova_superagent_bot" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.8125rem', color: 'var(--color-text-3)', textDecoration: 'none', minHeight: 44, display: 'flex', alignItems: 'center' }}>
-            Liên hệ
+            Contact
           </a>
         </div>
         <p style={{ fontSize: '0.75rem', color: 'var(--color-text-3)', margin: 0 }}>

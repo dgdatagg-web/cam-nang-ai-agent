@@ -29,7 +29,7 @@ export default function ChatMockup({
           </div>
           <div style={{ fontSize: '0.6875rem', color: 'var(--color-p5)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-p5)', display: 'inline-block' }} />
-            Đang hoạt động
+            Online
           </div>
         </div>
         {label && (

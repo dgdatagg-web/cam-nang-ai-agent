@@ -11,7 +11,7 @@ interface MidPageCtaProps {
 export default function MidPageCta({
   headline,
   sub,
-  ctaText = 'Bắt đầu 7 ngày demo miễn phí',
+  ctaText = 'Start your free 7-day demo',
 }: MidPageCtaProps) {
   return (
     <div className="mid-cta">
@@ -24,7 +24,7 @@ export default function MidPageCta({
             {sub}
           </p>
           <a
-            href="https://t.me/Nova_superagent_bot"
+            href="https://www.myclaw.vn/en/pricing"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

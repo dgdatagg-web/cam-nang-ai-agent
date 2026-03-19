@@ -51,7 +51,7 @@ export default function PhasePartnership() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--color-border)', border: '1px solid var(--color-border)', borderRadius: 12, overflow: 'hidden' }}>
             <div style={{ padding: '1.5rem', background: 'rgba(46, 204, 133, 0.04)' }}>
               <div style={{ fontSize: '0.6875rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-p5)', marginBottom: '0.75rem' }}>
-                Nhất quán mỗi ngày
+                Consistent daily
               </div>
               <div style={{ display: 'flex', gap: '0.375rem', alignItems: 'flex-end', height: 48 }}>
                 {[2, 3, 3.5, 4, 4.5, 5, 6].map((h, i) => (
@@ -67,7 +67,7 @@ export default function PhasePartnership() {
             </div>
             <div style={{ padding: '1.5rem', background: 'rgba(92,88,82,0.08)' }}>
               <div style={{ fontSize: '0.6875rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-text-3)', marginBottom: '0.75rem' }}>
-                Tập trung một lần/tuần
+                One big session/week
               </div>
               <div style={{ display: 'flex', gap: '0.375rem', alignItems: 'flex-end', height: 48 }}>
                 {[1, 1, 1, 1, 1, 1, 8].map((h, i) => (

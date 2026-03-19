@@ -68,7 +68,7 @@ export default function PhaseTraining() {
                 color: i < 3 ? 'var(--color-text-3)' : i < 6 ? 'var(--color-text-2)' : 'var(--color-p2)',
                 transition: 'transform 0.2s ease',
               }}>
-                Ngày {i + 1}
+                Day {i + 1}
               </div>
             ))}
           </div>

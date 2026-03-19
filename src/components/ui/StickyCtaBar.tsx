@@ -16,25 +16,25 @@ export default function StickyCtaBar() {
   }, [])
 
   return (
-    <div className={`sticky-cta ${visible ? 'visible' : ''}`} role="complementary" aria-label="Kích hoạt Agent">
+    <div className={`sticky-cta ${visible ? 'visible' : ''}`} role="complementary" aria-label="Activate Agent">
       <div className="sticky-cta-inner">
         <div>
           <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--color-text)' }}>
-            Sẵn sàng gặp đồng đội?
+            Ready to meet your teammate?
           </div>
           <div style={{ fontSize: '0.8125rem', color: 'var(--color-text-3)' }}>
-            7 ngày demo miễn phí · Không cần thẻ
+            7-day free demo · No credit card needed
           </div>
         </div>
         <a
-          href="https://t.me/Nova_superagent_bot"
+          href="https://www.myclaw.vn/en/pricing"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary"
           style={{ whiteSpace: 'nowrap' }}
         >
           <Zap size={16} />
-          Bắt đầu 7 ngày demo
+          Start 7-day demo
         </a>
       </div>
     </div>

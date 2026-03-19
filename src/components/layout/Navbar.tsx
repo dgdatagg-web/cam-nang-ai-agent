@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { Sparkles, Zap } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 
 const PHASE_IDS = ['core-values', 'phase-1', 'phase-2', 'phase-3', 'phase-4', 'phase-5', 'phase-6']
 
@@ -54,12 +54,13 @@ export default function Navbar() {
           fontWeight: 700, fontSize: '0.9375rem', color: 'var(--color-text)',
           textDecoration: 'none', letterSpacing: '-0.01em',
           display: 'flex', alignItems: 'center', gap: '0.5rem',
+          minHeight: 44, /* a11y touch target */
         }}>
           <Sparkles size={18} color="var(--color-amber)" />
           Trợ Lý Thông Minh
         </a>
 
-        {/* Phase dots — desktop — 44px touch targets */}
+        {/* Phase dots — 44px touch targets */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }} aria-label="Giai đoạn">
           {PHASE_IDS.slice(1).map((id, i) => (
             <a
@@ -84,8 +85,13 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <a href="https://t.me/Nova_superagent_bot" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '0.5rem 1.125rem', fontSize: '0.8125rem' }}>
-          <Zap size={14} />
+        <a
+          href="https://t.me/Nova_superagent_bot"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary"
+          style={{ padding: '0.5rem 1.125rem', fontSize: '0.8125rem', minHeight: 44 }}
+        >
           Bắt đầu
         </a>
       </div>

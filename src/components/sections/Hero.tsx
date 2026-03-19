@@ -35,20 +35,20 @@ export default function Hero() {
               marginBottom: '1.5rem',
             }}>
               <Sparkles size={12} />
-              Cẩm nang kích hoạt AI Agent
+              AI Agent Activation Guide
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.08}>
             <h1 className="text-display" style={{ color: 'var(--color-text)', marginBottom: '1.25rem' }}>
-              Đồng Đội AI<br />
+              Your First AI<br />
               <span style={{
                 background: 'linear-gradient(135deg, var(--color-amber) 0%, var(--color-p6) 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-                Đầu Tiên Của Bạn
+                Teammate
               </span>
             </h1>
           </ScrollReveal>
@@ -61,20 +61,20 @@ export default function Hero() {
               maxWidth: 500,
               marginBottom: '0.75rem',
             }}>
-              Chỉ cần biết cách làm đồng đội tốt.
+              Just know how to be a good teammate.
             </p>
             <p style={{ fontSize: '0.9375rem', color: 'var(--color-text-3)', lineHeight: 1.6 }}>
-              Không cần biết code. Không cần biết AI.
+              No coding required. No AI knowledge needed.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.24}>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '2.5rem' }}>
-              <a href="https://t.me/Nova_superagent_bot" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Bắt Đầu 7 Ngày Demo Miễn Phí
+              <a href="https://www.myclaw.vn/en/pricing" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                Start Your Free 7-Day Demo
                 <ArrowDown size={14} />
               </a>
-              <a href="#core-values" className="btn-ghost">Triết lý đối tác</a>
+              <a href="#core-values" className="btn-ghost">Partnership Philosophy</a>
             </div>
           </ScrollReveal>
 
@@ -87,7 +87,7 @@ export default function Hero() {
               <div style={{
                 width: 1, height: 40, background: 'linear-gradient(to bottom, transparent, var(--color-border-med))'
               }} />
-              6 giai đoạn · Từ kích hoạt đến đối tác
+              6 phases · From activation to partnership
             </div>
           </ScrollReveal>
         </div>

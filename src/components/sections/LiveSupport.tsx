@@ -20,16 +20,16 @@ export default function LiveSupport() {
             marginBottom: '1.5rem',
           }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-p5)', display: 'inline-block' }} />
-            Hỗ trợ 24/7
+            24/7 Support
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.08}>
           <h2 className="text-heading" style={{ marginBottom: '1rem' }}>
-            Tinh Tú luôn ở đây
+            NOVA 01 is always here
           </h2>
           <p style={{ color: 'var(--color-text-2)', fontSize: '1rem', lineHeight: 1.7, maxWidth: 480, margin: '0 auto 2.5rem' }}>
-            Tinh Tú là AI Agent thật — không phải chatbot FAQ. Hỏi gì cũng được: gói dịch vụ, quy trình kích hoạt, hoặc bất kỳ điều gì bạn chưa rõ.
+            NOVA 01 is a real AI Agent — not an FAQ chatbot. Ask anything: service plans, activation process, or anything you're unsure about.
           </p>
         </ScrollReveal>
 
@@ -54,13 +54,13 @@ export default function LiveSupport() {
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-bg)',
               }}>
-                TT
+                N1
               </div>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-text)' }}>Tinh Tú</div>
+                <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-text)' }}>NOVA 01</div>
                 <div style={{ fontSize: '0.6875rem', color: 'var(--color-p5)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
                   <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--color-p5)', display: 'inline-block' }} />
-                  Đang hoạt động
+                  Online
                 </div>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function LiveSupport() {
                 fontSize: '0.875rem', color: 'var(--color-text-2)',
                 lineHeight: 1.6, textAlign: 'left',
               }}>
-                Xin chào! Tôi là Tinh Tú. Bạn đang tìm hiểu về AI Agent nào? Để tôi tư vấn phù hợp với doanh nghiệp của bạn.
+                Hi there! I'm NOVA 01. Looking to learn more about AI Agents? Let me help you find the right fit for your business.
               </div>
 
               <a
@@ -85,7 +85,7 @@ export default function LiveSupport() {
                 className="btn-primary"
                 style={{ width: '100%', justifyContent: 'center', marginTop: '0.25rem' }}
               >
-                Nhắn Tinh Tú ngay
+                Message NOVA 01 now
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

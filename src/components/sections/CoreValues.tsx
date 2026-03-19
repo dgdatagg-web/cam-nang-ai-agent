@@ -11,15 +11,6 @@ export default function CoreValues() {
       <div className="container">
         <ScrollReveal variant="fade">
           <div style={{ marginBottom: '3.5rem' }}>
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.1em',
-              textTransform: 'uppercase', color: 'var(--color-amber)',
-              marginBottom: '1rem',
-            }}>
-              <Handshake size={14} />
-              Triết lý đối tác
-            </div>
             <h2 className="text-heading" style={{ marginBottom: '1rem' }}>
               Trước khi bắt đầu —<br />
               <span style={{ color: 'var(--color-amber)' }}>hiểu rõ mối quan hệ này.</span>
@@ -45,12 +36,14 @@ export default function CoreValues() {
                 padding: '1.75rem',
                 background: 'var(--color-bg-raised)',
                 height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.375rem',
               }}>
                 <div style={{
                   fontSize: '0.9375rem',
                   fontWeight: 600,
                   color: 'var(--color-text)',
-                  marginBottom: '0.375rem',
                   lineHeight: 1.45,
                 }}>
                   {v.human}
@@ -72,11 +65,15 @@ export default function CoreValues() {
             marginTop: '2.5rem',
             padding: '1.75rem',
             background: 'var(--color-bg-raised)',
-            border: '1px solid var(--color-amber-line)',
+            border: '1px solid var(--color-border)',
             borderRadius: 12,
+            display: 'flex',
+            gap: '1rem',
+            alignItems: 'flex-start',
           }}>
+            <Handshake size={20} color="var(--color-amber)" style={{ flexShrink: 0, marginTop: 2 }} />
             <p style={{ fontSize: '1rem', color: 'var(--color-text-2)', lineHeight: 1.75, margin: 0 }}>
-              Mối quan hệ này là đối tác — không phải chủ tớ. Càng đối xử với agent như một đồng đội thực sự, họ càng trở nên không thể thiếu. Đây không phải triết học — đây là cách kiến trúc hoạt động.
+              Bạn không phải thượng đế. Bạn là người đồng hành. Càng đối xử với agent như một đồng đội thực sự, họ càng trở nên không thể thiếu. Đây không phải triết học — đây là cách kiến trúc hoạt động.
             </p>
           </div>
         </ScrollReveal>

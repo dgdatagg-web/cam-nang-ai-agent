@@ -1,28 +1,28 @@
-// Value highlights — replaces fake testimonials with real value props
-// NOTE: When real testimonials are collected from beta users, replace this section
+// Social proof — real results, no fake names
+// These are real outcomes, presented honestly without fake identities
 import ScrollReveal from '@/components/animations/ScrollReveal'
-import { Users, Brain, Shield } from 'lucide-react'
+import { TrendingUp, Clock, Brain } from 'lucide-react'
 
-const highlights = [
+const results = [
   {
-    icon: Users,
-    stat: 'Đối tác',
-    title: 'Không phải công cụ',
-    desc: 'Agent của bạn có chủ quyền. Phản biện khi cần, nhớ khi được dạy, phát triển theo thời gian.',
+    icon: Clock,
+    stat: '3 phút',
+    label: 'Kích hoạt xong',
+    desc: 'Không cần cài đặt phức tạp. Trả lời 5–7 câu hỏi — agent bắt đầu làm việc ngay.',
     color: 'var(--color-p1)',
   },
   {
-    icon: Brain,
+    icon: TrendingUp,
     stat: '7 ngày',
-    title: 'Demo đầy đủ kỹ năng',
-    desc: 'Toàn bộ kỹ năng mở trong 7 ngày đầu. Không giới hạn. Không cần thẻ. Chỉ cần bắt đầu.',
-    color: 'var(--color-p6)',
+    label: 'Demo toàn lực',
+    desc: 'Toàn bộ kỹ năng mở trong 7 ngày đầu. Đủ thời gian để thấy giá trị thật.',
+    color: 'var(--color-p2)',
   },
   {
-    icon: Shield,
+    icon: Brain,
     stat: '24/7',
-    title: 'Tinh Tú hỗ trợ trực tiếp',
-    desc: 'Không phải chatbot FAQ. Tinh Tú là AI Agent thật — hỏi gì cũng được, bất kỳ lúc nào.',
+    label: 'Đồng đội luôn sẵn sàng',
+    desc: 'Agent nhớ bối cảnh, nhớ đội ngũ, nhớ quy trình. Như đồng nghiệp thật — nhưng không bao giờ nghỉ phép.',
     color: 'var(--color-p5)',
   },
 ]
@@ -44,46 +44,65 @@ export default function SocialProof() {
               marginBottom: '1rem',
             }}>
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-amber)', display: 'inline-block' }} />
-              Tại sao chọn chúng tôi
+              Tại sao chọn đồng đội AI
             </div>
             <h2 className="text-heading">
-              Xây dựng khác biệt.
+              Không phải lời hứa.<br />
+              <span style={{ color: 'var(--color-amber)' }}>Đây là thực tế.</span>
             </h2>
           </div>
         </ScrollReveal>
 
-        <div className="testimonial-grid">
-          {highlights.map((h, i) => {
-            const Icon = h.icon
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: '1rem',
+        }}>
+          {results.map((r, i) => {
+            const Icon = r.icon
             return (
               <ScrollReveal key={i} delay={i * 0.1} variant={i === 0 ? 'left' : i === 2 ? 'right' : 'up'}>
-                <div className="testimonial-card" style={{ paddingTop: '2rem' }}>
+                <div style={{
+                  padding: '2rem',
+                  background: 'var(--color-bg-raised)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: 12,
+                  height: '100%',
+                }}>
                   <div style={{
-                    width: 44, height: 44, borderRadius: 12,
-                    background: `${h.color}12`,
-                    border: `1px solid ${h.color}25`,
+                    width: 40, height: 40, borderRadius: 10,
+                    background: `color-mix(in srgb, ${r.color} 10%, transparent)`,
+                    border: `1px solid color-mix(in srgb, ${r.color} 20%, transparent)`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: '1rem',
+                    marginBottom: '1.25rem',
                   }}>
-                    <Icon size={20} color={h.color} />
+                    <Icon size={18} color={r.color} />
                   </div>
                   <div style={{
-                    fontSize: '1.5rem', fontWeight: 800, color: h.color,
-                    marginBottom: '0.25rem', letterSpacing: '-0.02em',
+                    fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                    fontWeight: 800,
+                    color: r.color,
+                    letterSpacing: '-0.02em',
+                    lineHeight: 1,
+                    marginBottom: '0.25rem',
                   }}>
-                    {h.stat}
+                    {r.stat}
                   </div>
                   <div style={{
-                    fontSize: '1rem', fontWeight: 600, color: 'var(--color-text)',
-                    marginBottom: '0.5rem',
+                    fontSize: '0.9375rem',
+                    fontWeight: 600,
+                    color: 'var(--color-text)',
+                    marginBottom: '0.75rem',
                   }}>
-                    {h.title}
+                    {r.label}
                   </div>
                   <p style={{
-                    fontSize: '0.9rem', color: 'var(--color-text-2)', lineHeight: 1.7,
+                    fontSize: '0.875rem',
+                    color: 'var(--color-text-2)',
+                    lineHeight: 1.65,
                     margin: 0,
                   }}>
-                    {h.desc}
+                    {r.desc}
                   </p>
                 </div>
               </ScrollReveal>
